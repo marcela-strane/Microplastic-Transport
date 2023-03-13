@@ -3,10 +3,8 @@ CNVector=[73,75,77,78,79,80,81,82,84,86,87,88,89,90,91,92,93,94,95,97,98];
 #iA=.2*RS; #initial abstraction (inches)
 
 #Rainfall Intensity
-!pip install [tabulate]
-from tabulate import tabulate
 
-assign data
+#assign data
 mydata = [
     ["2-year", "48.35", "9.07", "0.7244"],
     ["5-year", "52.32", "7.88", "0.69"],
@@ -16,11 +14,11 @@ mydata = [
     ["100-year", "60.66", "4.44", "0.5797"],
     ["500-year", "62.17", "2.95", "0.5196"]
 ]
-create header
+#create header
 head= ["Rainfall Intensity", "b", "d", "e"]
 
-display table
-print(tabulate(mydata, headers=head, tablefmt="grid"))
+#display table
+print(mydata, head, "grid")
 
 #Calculate rainfall intensity for each frequency
 TC=1140 #time of concentration in minutes
@@ -36,6 +34,6 @@ hundredyi=b6/(d6+TC)**e6
 fivehundredyi=b7/(d7+TC)**e7
 
 print(twoyi, fiveyi, tenyi, twentyfiveyi, fiftyyi, hundredyi, fivehundredyi, sep= "\n")
-
+print(output)
     
 
