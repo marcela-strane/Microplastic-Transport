@@ -3,7 +3,7 @@ CNVector=[73,75,77,78,79,80,81,82,84,86,87,88,89,90,91,92,93,94,95,97,98];
 #iA=.2*RS; #initial abstraction (inches)
 
 #Rainfall Intensity
-
+pip3 install --upgrade pip
 #assign data
 mydata = [
     ["2-year", "48.35", "9.07", "0.7244"],
@@ -18,7 +18,7 @@ mydata = [
 head= ["Rainfall Intensity", "b", "d", "e"]
 
 #display table
-print(mydata, head, "grid")
+print(tabulate(mydata,headers=head, tablefmt="grid"))
 
 #Calculate rainfall intensity for each frequency
 TC=1140 #time of concentration in minutes
@@ -34,6 +34,6 @@ hundredyi=b6/(d6+TC)**e6
 fivehundredyi=b7/(d7+TC)**e7
 
 print(twoyi, fiveyi, tenyi, twentyfiveyi, fiftyyi, hundredyi, fivehundredyi, sep= "\n")
-print(output)
+
     
 
