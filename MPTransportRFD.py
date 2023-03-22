@@ -37,5 +37,6 @@ fivehundredyi=b7/(d7+TC)**e7
 print(f"{twoyi=} {fiveyi=} {tenyi=} {twentyfiveyi=} {fiftyyi=} {hundredyi=} {fivehundredyi=}") 
 print("inches/hour")
 
-    
+#CN changing the initial abstraction####
+#  
 
