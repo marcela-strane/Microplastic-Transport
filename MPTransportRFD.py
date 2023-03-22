@@ -1,11 +1,14 @@
 CNlist=[73,75,77,78,79,80,81,82,84,86,87,88,89,90,91,92,93,94,95,97,98];
 def RS(array):
     for CN in array:
-        RS= (1000/CNlist)-10
-    print(CN, RS)
-    RS(CN)
-
-#RS=(1000/CNlist)-10; #retention max (storage) inches based on CN
+        #Stores our computed value to compute
+        compute = (1000/CN) - 10
+        #Adds value to our return array
+        rs.append(compute)
+        #prints the comuted value for every entry in the array
+        print(CN, compute)
+    #returns our list
+    return rs#retention max (storage) inches based on CN
 #iA=.2*RS; #initial abstraction (inches)
 #Calls RS with CNlist as our parameter, the function returns an array which we save it by
 #storing the output to a new variable
