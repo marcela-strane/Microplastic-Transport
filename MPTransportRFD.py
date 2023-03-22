@@ -4,18 +4,29 @@ def RS(array):
     rs= list()
     for CN in array:
         #Stores our computed value to compute
-        compute = (1000/CN) - 10
+        compute = (1000/CN) - 10 #S, retention max storage
         #Adds value to our return array
         rs.append(compute)
         #prints the comuted value for every entry in the array
         print(CN, compute)
     #returns our list
-    return rs#retention max (storage) inches based on CN
-#iA=.2*RS; #initial abstraction (inches)
+    return rs #retention max (storage) inches based on CN
 #Calls RS with CNlist as our parameter, the function returns an array which we save it by
 #storing the output to a new variable
 answerArray = RS(CNlist)
 print(f"answer array {answerArray}")
+#Initial Abstraction
+def abstraction(list):
+    list_int=[]
+    for i in list:
+        list.int.append(len(i))
+        return list_int
+def initial_abs(list):
+    new_list=abstraction(list)
+    return RS(array)
+
+
+print("-------------------------------------------------------------------------------------------------)")
 #Rainfall Intensity
 from tabulate import tabulate;
 #assign data
@@ -66,5 +77,6 @@ print("                          inches")
 print("--------------------------------------------------------------------------------")
 
 #Flow Rate of the Precipitation P to Q
+
 
 
