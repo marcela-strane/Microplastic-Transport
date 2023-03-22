@@ -1,5 +1,7 @@
 CNlist=[73,75,77,78,79,80,81,82,84,86,87,88,89,90,91,92,93,94,95,97,98];
 def RS(array):
+    #Creates an empty list
+    rs= list()
     for CN in array:
         #Stores our computed value to compute
         compute = (1000/CN) - 10
