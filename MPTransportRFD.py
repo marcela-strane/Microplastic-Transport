@@ -1,30 +1,25 @@
 CNlist=[73,75,77,78,79,80,81,82,84,86,87,88,89,90,91,92,93,94,95,97,98];
 def RS(array):
     #Creates an empty list
-    rs= list()
+    rs= []
     for CN in array:
         #Stores our computed value to compute
         compute = (1000/CN) - 10 #S, retention max storage
         #Adds value to our return array
         rs.append(compute)
         #prints the comuted value for every entry in the array
-        print(CN, compute)
+        print(compute)
     #returns our list
     return rs #retention max (storage) inches based on CN
 #Calls RS with CNlist as our parameter, the function returns an array which we save it by
 #storing the output to a new variable
 answerArray = RS(CNlist)
-print(f"answer array {answerArray}")
-#Initial Abstraction
-def abstraction(list):
-    list_int=[]
-    for i in list:
-        list.int.append(len(i))
-        return list_int
-def initial_abs(list):
-    new_list=abstraction(list)
-    return RS(array)
+print(f"answer array={answerArray}")
 
+#Initial Abstraction
+c=0.2 #coefficient of I=.2S
+iA = [i * c for i in answerArray]
+print(f'{iA=}')
 
 print("-------------------------------------------------------------------------------------------------)")
 #Rainfall Intensity
