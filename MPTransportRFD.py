@@ -86,19 +86,28 @@ print("inches")
 #Flow Rate of the Precipitation P to Q
 #Q=((P2-iA)^2)/((P2-iA)+S)
 #Q=0 What Marci started with
-# for n in P:
+# for j in P:
 #     for k in iA:
 #         for x in S:
-#             Q=[(n-k)**2]/[(n-k)+x]
+#             Q=[(j-k)**2]/[(j-k)+x]
 # print (Q)
 
+print("Flowrate, Q, for each IDF Curve Case Scenario")
 Q = [];
-for n in P:
+for j in P:
     for k, x in zip(iA, S): #Pablo B. condensed: zipped this
-        top = (n-k)**2
-        bottom = (n-k+x)
+        top = (j-k)**2
+        bottom = (j-k+x)
         Q.append(top/bottom); #Pablo B. added this
-        print (Q)
+        print (top/bottom)
+
+n= 0.41 #Manning's Coefficient dimensionless for Bermuda Grass
+Slope=0.05 #ft/ft of  land
+SFlow=100*(Slope)**.5/n
+print("Sheet Flow=",SFlow)
+
+#Time of Travel
+
 
 
 
