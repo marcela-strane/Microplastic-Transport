@@ -1,4 +1,8 @@
-CNlist=[73,75,77,78,79,80,81,82,84,86,87,88,89,90,91,92,93,94,95,97,98];
+#Rainfall in Houston
+CNlist=[73,75,77,78,79,80,81,82,84,86,87,88,89,90,91,92,93,94,95,97,98]
+print("CNlist=")
+print(CNlist)
+print ("S=")
 #Finding Retention Max (Storage)
 def RS(array):
     #Creates an empty list
@@ -14,12 +18,12 @@ def RS(array):
     return rs #retention max (storage) inches based on CN
 #Calls RS with CNlist as our parameter, the function returns an array which we save it by
 #storing the output to a new variable
-answerArray = RS(CNlist)
-print(f"answer array={answerArray}")
+S = RS(CNlist) #S variable or Storage
+print(f"S={S}")
 
 #Solving for Initial Abstraction
 c=0.2 #coefficient of I=.2S
-iA = [i * c for i in answerArray]
+iA = [i * c for i in S]
 print(f'{iA=}') 
 print(f'in')
 
@@ -61,20 +65,43 @@ print("Rainfall Intensity Events:P2 or P") #now print the variables and outputs 
 hr=24 #hours of a rainfall event
 #assign the new values as a variables in the dictionary created
 RIE=dict()
-twoyihr= RIE['twoyihr=']= twoyi*hr
-fiveyihr=RIE['fiveyihr=']= fiveyi*hr
-tenyihr=RIE['tenyihr=']= tenyi*hr
-twentyfiveyihr=RIE['twentyfiveyihr=']= twentyfiveyi*hr
-fiftyyihr=RIE['fiftyyihr=']= fiftyyi*hr
-hundredyihr=RIE['hundredyihr=']= hundredyi*hr
-fivehundredyihr=RIE['fivehundredyihr=']= fivehundredyi*hr
+twoyi= RIE['twoyi=']= twoyi*hr
+fiveyi=RIE['fiveyi=']= fiveyi*hr
+tenyi=RIE['tenyi=']= tenyi*hr
+twentyfiveyi=RIE['twentyfiveyi=']= twentyfiveyi*hr
+fiftyyi=RIE['fiftyyi=']= fiftyyi*hr
+hundredyi=RIE['hundredyi=']= hundredyi*hr
+fivehundredyi=RIE['fivehundredyi=']= fivehundredyi*hr
 
 for i in RIE:
     print("%s %f" % (i, RIE[i]))
 print("                          inches")
 print("--------------------------------------------------------------------------------")
 
+#Array of the Ps
+P= [twoyi, fiveyi, tenyi, twentyfiveyi, fiftyyi, hundredyi, fivehundredyi ]
+print(P)
+print("inches")
+
 #Flow Rate of the Precipitation P to Q
 #Q=((P2-iA)^2)/((P2-iA)+S)
+#Q=0 What Marci started with
+# for n in P:
+#     for k in iA:
+#         for x in S:
+#             Q=[(n-k)**2]/[(n-k)+x]
+# print (Q)
+
+Q = [];
+for n in P:
+    for k, x in zip(iA, S): #Pablo B. condensed: zipped this
+        top = (n-k)**2
+        bottom = (n-k+x)
+        Q.append(top/bottom); #Pablo B. added this
+        print (Q)
+
+
+
+
 
 
