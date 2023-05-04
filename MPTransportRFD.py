@@ -2,7 +2,7 @@
 CNlist=[73,75,77,78,79,80,81,82,84,86,87,88,89,90,91,92,93,94,95,97,98]
 print("CNlist=")
 print(CNlist)
-print ("S=")
+print ("S (in)=")
 #Finding Retention Max (Storage)
 def RS(array):
     #Creates an empty list
@@ -19,7 +19,7 @@ def RS(array):
 #Calls RS with CNlist as our parameter, the function returns an array which we save it by
 #storing the output to a new variable
 S = RS(CNlist) #S variable or Storage
-print(f"S={S}")
+print(f"S={S}","in")
 
 #Solving for Initial Abstraction
 c=0.2 #coefficient of I=.2S
@@ -93,20 +93,47 @@ print("inches")
 # print (Q)
 
 print("Flowrate, Q, for each IDF Curve Case Scenario")
-Q = [];
+Q = 0; #use [] to append
+Qmatrix=[]
 for j in P:
     for k, x in zip(iA, S): #Pablo B. condensed: zipped this
         top = (j-k)**2
         bottom = (j-k+x)
-        Q.append(top/bottom); #Pablo B. added this
-        print (top/bottom)
+        Qmatrix.append(top/bottom); 
+        Q=top/bottom
+        print ("Q=", '{0:.4g}'.format((Q)), "in") #if you print Q in command it only prints the last Q for now
+print("Q array=", Qmatrix, "in")
+
+#print(len(Q)) #check length of Q needs to be 147 
 
 n= 0.41 #Manning's Coefficient dimensionless for Bermuda Grass
 Slope=0.05 #ft/ft of  land
-SFlow=100*(Slope)**.5/n
-print("Sheet Flow=",SFlow)
+SFlowL=((100*(Slope)**.5)/n)*0.3048 #convert ft to m
+print("Sheet Flow Length=",SFlowL, "m",)
+
+print("-------------Find Travel Time-----------")
 
 #Time of Travel
+T_t=[];
+for  a in P:
+    top=(0.007)*(((n)*(SFlowL))**0.8)
+    bottom=a**0.5*Slope**0.4
+    T=(top/bottom)*60
+    T_t.append(T)
+    print("T_t=",'{0:.4g}'.format((T)), "mins") #if you print T_t in the command it only prints the last T_t for now
+print("travel time=",T_t,"min")
+
+print("-------------Find Velocity----------")
+#Velocity
+conv=60 #conversion from mins to seconds
+V=0
+Vmatrix=[]
+for b in T_t:
+    V=(SFlowL/(conv*b))
+    Vmatrix.append(V);
+    print("V=",V,"m/sec")
+print("V array=",Vmatrix, "m/sec")
+    
 
 
 
