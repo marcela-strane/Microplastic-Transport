@@ -1,7 +1,6 @@
 #Rainfall in Houston
 CNlist=[73,75,77,78,79,80,81,82,84,86,87,88,89,90,91,92,93,94,95,97,98]
-print("CNlist=")
-print(CNlist)
+print("CNlist=",CNlist)
 print ("S (in)=")
 #Finding Retention Max (Storage)
 def RS(array):
