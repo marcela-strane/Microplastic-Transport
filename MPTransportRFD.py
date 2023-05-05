@@ -17,14 +17,14 @@ def RS(array):
     return rs #retention max (storage) inches based on CN
 #Calls RS with CNlist as our parameter, the function returns an array which we save it by
 #storing the output to a new variable
-#S = RS(CNlist) #S variable or Storage
-#print(f"S={S}","in")
+S = RS(CNlist) #S variable or Storage
+print(f"S={S}","in")
 
 S_newmatrix=[]
 for c in S:
     S_new=1.33*(c**1.15) #S_.05 so Ia=.05S now
     S_newmatrix.append(S_new)
-    print("S_newmatrix", S_new, "in")
+    print("S_new=", S_new, "in")
     
 
 #Solving for Initial Abstraction #I_a/P ratio should be between 0.1 and 0.5
