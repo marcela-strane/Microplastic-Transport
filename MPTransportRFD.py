@@ -58,15 +58,15 @@ TC=1440 #time of concentration in minutes
 b1=48.35; b2=52.32; b3=54.68; b4=57.79; b5=61; b6=60.66; b7=62.15;
 d1=9.07; d2=7.88; d3=6.96; d4=5.89; d5=5.46; d6=4.44; d7=2.95;
 e1=0.7244; e2=0.69; e3=0.6623; e4=0.6294; e5=0.6096; e6=0.5797; e7=0.5196;
-twoyi=b1/(d1+TC)**e1
-fiveyi=b2/(d2+TC)**e2
-tenyi=b3/(d3+TC)**e3
-twentyfiveyi=b4/(d4+TC)**e4
-fiftyyi=b5/(d5+TC)**e5
-hundredyi=b6/(d6+TC)**e6
-fivehundredyi=b7/(d7+TC)**e7
+twoyi=b1/(d1+TC)**e1 #inches/hour
+fiveyi=b2/(d2+TC)**e2 #inches/hour
+tenyi=b3/(d3+TC)**e3 #inches/hour
+twentyfiveyi=b4/(d4+TC)**e4 #inches/hour
+fiftyyi=b5/(d5+TC)**e5 #inches/hour
+hundredyi=b6/(d6+TC)**e6 #inches/hour
+fivehundredyi=b7/(d7+TC)**e7 #inches/hour
 
-#intensity isn't printed but P2=i*24hrs
+#intensity isn't printed but P2=i(in/hr)*# of hrs
 print("Rainfall Intensity Events:P2 or P") #now print the variables and outputs side by side
 hr=24 #hours of a rainfall event
 #assign the new values as a variables in the dictionary created
@@ -89,7 +89,7 @@ P= [twoyi, fiveyi, tenyi, twentyfiveyi, fiftyyi, hundredyi, fivehundredyi ]
 print(P)
 print("inches")
 
-#Flow Rate of the Precipitation P to Q
+#Runoff of the Precipitation P, Q
 #Q=((P2-iA)^2)/((P2-iA)+S)
 #Q=0 What Marci started with
 # for j in P:
