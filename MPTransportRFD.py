@@ -1,8 +1,8 @@
 #Rainfall in Houston
-CNlist=[73,75,77,78,79,80,81,82,84,86,87,88,89,90,91,92,93,94,95,97,98]
+CNlist=[73,75,77,78,79,80,81,82,84,86,87,88,89,90,91,92,93,94,95,97,98] #for this method to work CN should be greater than 40
 print("CNlist=",CNlist)
-print ("S (in)=")
-#Finding Retention Max (Storage)
+#print ("S (in)=")
+#Finding Retention Max (Storage) #Drainage are for your location should be up to 2,000 acres
 def RS(array):
     #Creates an empty list
     rs= []
@@ -17,12 +17,19 @@ def RS(array):
     return rs #retention max (storage) inches based on CN
 #Calls RS with CNlist as our parameter, the function returns an array which we save it by
 #storing the output to a new variable
-S = RS(CNlist) #S variable or Storage
-print(f"S={S}","in")
+#S = RS(CNlist) #S variable or Storage
+#print(f"S={S}","in")
 
-#Solving for Initial Abstraction
-c=0.2 #coefficient of I=.2S
-iA = [i * c for i in S]
+S_newmatrix=[]
+for c in S:
+    S_new=1.33*(c**1.15) #S_.05 so Ia=.05S now
+    S_newmatrix.append(S_new)
+    print("S_newmatrix", S_new, "in")
+    
+
+#Solving for Initial Abstraction #I_a/P ratio should be between 0.1 and 0.5
+c=0.05 #coefficient of I_a=.2S
+iA = [i * c for i in S_newmatrix]
 print(f'{iA=}') 
 print(f'in')
 
@@ -95,7 +102,7 @@ print("Flowrate, Q, for each IDF Curve Case Scenario")
 Q = 0; #use [] to append
 Qmatrix=[]
 for j in P:
-    for k, x in zip(iA, S): #Pablo B. condensed: zipped this
+    for k, x in zip(iA, S_newmatrix): #Pablo B. condensed: zipped this
         top = (j-k)**2
         bottom = (j-k+x)
         Qmatrix.append(top/bottom); 
