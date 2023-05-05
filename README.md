@@ -16,7 +16,7 @@ The code will then generate a rainfall intensity (you can change this TC=time of
 
 *If you need guidance on picking this number you can download rainfall data off gauges around you and open the spread sheet to visualize what would be the most common number of hours that rainfall persists the most in your area. I have another code available on my github if you want to condense the data into your rainfall event by inputting CSV files and it is currently set to 6 hours events. This can be changed when the code is downloaded): https://github.com/marcela-strane/RainfallPatterns
 
-If you would like to identify a Flow, Q of rainfall runoff, in inches the code will generate all runoff possible for each condition and this is stored in a Qmatrix as well as iterated as 1 value, depending on what you would like to use it for. 
+If you would like to identify a rainfall runoff, Q, in inches the code will generate all runoff possible for each condition and this is stored in a Qmatrix as well as iterated as 1 value, depending on what you would like to use it for. 
 
 You are able to change the land slope, manning's coefficient (ours is based on Bermuda Grass) to identify the maximum sheet flow length you will need to be in the sheet flow regime. 
 
