@@ -139,7 +139,9 @@ for b in T_t:
     Vmatrix.append(V);
     print("V=",V,"m/sec")
 print("V array=",Vmatrix, "m/sec")
-    
+
+
+
 
 
 
