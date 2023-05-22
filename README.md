@@ -12,9 +12,9 @@ The code will then compute intial abstraction using I=.2S for every possible con
 
 Rainfall intensity table was created using the City of Houston Storm Management Plan. If this is available to you for your city you may change the data in the table or delete that section and create your own equations based on the IDF curves for your location.
 
-The code will then generate a rainfall intensity (you can change this TC=time of concentration to be more or less based on your location's comprehensive plan). The values produced are in in/hr then you can multiply by your storm event (an "arbitrary" number of hours, minutes of rainfall you want to consider as a rainfall event. 
+The code will then generate a rainfall intensity (you can change this TC=time of concentration to be more or less based on your location's comprehensive plan). The values produced are in in/hr then you can multiply by your storm event (an "arbitrary" number of hours, minutes of rainfall you want to consider as a rainfall event). 
 
-*If you need guidance on picking this number you can download rainfall data off gauges around you and open the spread sheet to visualize what would be the most common number of hours that rainfall persists the most in your area. I have another code available on my github if you want to condense the data into your rainfall event by inputting CSV files and it is currently set to 6 hours events. This can be changed when the code is downloaded): https://github.com/marcela-strane/RainfallPatterns
+*If you need guidance on picking this number you can download rainfall data off gauges around you and open the spread sheet to visualize what would be the most common number of hours that rainfall persists the most in your area. I have another code available on my github if you want to condense the data into your rainfall event by inputting CSV files and it is currently set to 6 hours events. (This can be changed when the code is downloaded): https://github.com/marcela-strane/RainfallPatterns
 
 If you would like to identify a rainfall runoff, Q, in inches the code will generate all runoff possible for each condition and this is stored in a Qmatrix as well as iterated as 1 value, depending on what you would like to use it for. 
 
