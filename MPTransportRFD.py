@@ -53,7 +53,7 @@ print(tabulate(mydata,headers=head, tablefmt="grid"))
 
 #Calculate rainfall intensity for each frequency using the  IDF curves and Houston IDF Equations
 print("----------------------------------------------------------------")
-TC=1440 #time of concentration in minutes
+TC=1440 #time of concentration in minutes, need to fix this by using the stormwater modeling book
 #solving for intensity using these parameters below
 b1=48.35; b2=52.32; b3=54.68; b4=57.79; b5=61; b6=60.66; b7=62.15;
 d1=9.07; d2=7.88; d3=6.96; d4=5.89; d5=5.46; d6=4.44; d7=2.95;

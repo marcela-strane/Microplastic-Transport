@@ -17,7 +17,7 @@ print('-------------------------------------------------------------------------
 
 D = 0.00056 # Diameter (m)
 nu = 1.01e-6 # kinematic viscosity m^2/s
-Dsub=960*10**-3 #density of the plastic (g/cm^3)
+Dsub=960*10e-3 #density of the plastic (g/cm^3)
 DH20=1000 #density of water (g/cm^3)
 delta=Dsub/DH20 #specific gravity= density of substance/density of water
 g=9.81 #m/s^2 gravity
