@@ -4,7 +4,7 @@ print("CNlist=",CNlist)
 #print ("S (in)=")
 #Finding Retention Max (Storage) #Drainage are for your location should be up to 2,000 acres
 def RS(array):
-    #Creates an empty list
+    #Creates an empty list helped by Andrew D. 
     rs= []
     for CN in array:
         #Stores our computed value to compute
@@ -139,13 +139,3 @@ for b in T_t:
     Vmatrix.append(V);
     print("V=",V,"m/sec")
 print("V array=",Vmatrix, "m/sec")
-
-
-
-
-
-
-
-
-
-

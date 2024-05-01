@@ -1,8 +1,11 @@
 import numpy as np
+import os
+import csv
 
+#Matlab code turned into Python code (by Marcela) emailed to me by Junko Guo Paper: Emperical Model for Shields Diagram and Its Applications
 D = 0.00056 # Diameter (m)
 nu = 1.01e-6 # kinematic viscosity m^2/s
-D_star = ((2.65-1)*9.81/nu**2)**(1/3)*D #
+D_star = ((2.65-1)*9.81/nu**2)**(1/3)*D 
 print(D_star)
 poly = [1, 195/7, 162/7-D_star**3/18, -11/42*D_star**3, -81/14*D_star**3]
 R_starc = np.roots(poly)
@@ -15,9 +18,21 @@ print(tau_starc)
 print(tau_c)
 print('--------------------------------------------------------------------------------------------------------')
 
+#Marcela's continuation of the  matlab code to be clearer and applicable to her project
 D = 0.00056 # Diameter (m)
 nu = 1.01e-6 # kinematic viscosity m^2/s
+
+# Loop through different plastic densities
 Dsub=960*10e-3 #density of the plastic (g/cm^3)
+
+
+filename= "marcela-strane/Microplastic-Transport/PlasticDens.csv"
+
+with open(filename, 'r') as csvfile:
+    datareader = csv.reader(csvfile)
+    for row in datareader:
+        print(row)
+
 DH20=1000 #density of water (g/cm^3)
 delta=Dsub/DH20 #specific gravity= density of substance/density of water
 g=9.81 #m/s^2 gravity
