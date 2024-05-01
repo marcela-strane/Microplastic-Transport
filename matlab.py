@@ -26,7 +26,7 @@ nu = 1.01e-6 # kinematic viscosity m^2/s
 Dsub=960*10e-3 #density of the plastic (g/cm^3)
 
 
-filename= "marcela-strane/Microplastic-Transport/PlasticDens.csv"
+filename= "PlasticDens.csv"
 
 with open(filename, 'r') as csvfile:
     datareader = csv.reader(csvfile)
